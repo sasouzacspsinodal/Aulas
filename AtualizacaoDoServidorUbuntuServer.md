@@ -84,7 +84,7 @@ sudo apt autoclean
 sudo apt clean
 ```
 
-## 09_ Verificando todas as versões de software atualizados no Ubuntu Server (NÃO COMENTADO NO VÍDEO)
+## 09_ Verificando todas as versões de software atualizados no Ubuntu Server
 
 #List é utilizado para listar todos os software que serão atualizados no sistema.
 #opção do comando apt: list (list is used to display a list of packages), --installed (shows
@@ -94,7 +94,7 @@ sudo apt clean
 sudo apt list --installed
 ```
 
-## 10_ Verificando os Logs de atualização de software no Ubuntu Server (NÃO COMENTADO NO VÍDEO)
+## 10_ Verificando os Logs de atualização de software no Ubuntu Server
 
 #Verificando o Log de instalação e atualização de pacotes no Ubuntu Server
 #opção do comando cat: -n (number line)
