@@ -1,6 +1,6 @@
 Definir a senha de super usuario root
 
-```bash
+```bashs
 passwd root
 ```
 # Atualizar o sistema:
