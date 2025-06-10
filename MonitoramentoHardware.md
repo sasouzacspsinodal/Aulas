@@ -1,24 +1,29 @@
 ## 01_ Instalando os aplicativos de monitoramento no Ubuntu Server
-```bash
+
 #instalação dos aplicativos básicos de monitoramento de hardware
 #opção da contra barra (\): criar uma quebra de linha no terminal
+```bash
 sudo apt install sysstat nmon btop htop iotop dstat atop nload iftop bmon ethtool stress-ng \
 s-tui lm-sensors acpi i7z glances smartmontools nvme-cli
 ```
 
 ## 02_ Verificando a versão do Ubuntu Server
-```bash
+
 #verificando a versão e codinome do Ubuntu Server 
+```bash
 sudo cat /etc/os-release
+```
 
 #verificando a versão do LSB (Linux Standard Base) do Ubuntu Server
+```bash
 sudo cat /etc/lsb-release
 ```
 
 ## 03_ Verificando a versão do Kernel e Uptime no Ubuntu Server
-```bash
+
 #verificando a versão do Kernel com o comando uname
 #opção do comando uname: -a (all)
+```bash
 sudo uname -a
 ```
 
@@ -37,15 +42,19 @@ Entendendo os valores de saída das informações do Kernel com o comando: __`*u
 | 08 | x86_64 x86_64 x86_64 | Isso representa a arquitetura da CPU e do sistema (O primeiro x86_64 indica a arquitetura do processador, O segundo x86_64 mostra que o sistema operacional, O terceiro x86_64 também se refere à arquitetura de hardware que o kernel está usando) |
 | 09 | GNU/Linux | Indica que você está usando o sistema operacional GNU/Linux
 
-```bash
+
 #verificando a versão do Kernel com o comando hostnamectl
+```bash
 sudo hostnamectl
+```
 
 #verificando a versão do Kernel do arquivo version
+```bash
 sudo cat /proc/version
 ```
-```bash
+
 #verificando o tempo de atividade do servidor com o comando uptime
+```bash
 sudo uptime
 ```
 
