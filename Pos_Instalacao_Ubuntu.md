@@ -1,11 +1,44 @@
+Verificar a distro
+```bash
+hostnamectl
+```
+Verificar espaço em disco
+```bash
+df -h
+```
+
 Definir a senha de super usuario root
 
 ```bash
 passwd root
 ```
 
-Atualizar o sistema:
+Habilitar Data e hora no histórico de comandos (history)
+```bash
+export HISTTIMEFORMAT='%F %T ' && echo "export HISTTIMEFORMAT='%F %T '" >> /etc/bash.bashrc
+```
 
+Acertar fuso horário no ubuntu
+```bash
+dpkg-reconfigure tzdata
+```
+
+ Verificar o horário do sistema e do syslog
+```bash
+date && tail /var/log/syslog
+```
+
+Caso o horário do syslog não tenha sido ajustado pro fuso correto
+```bash
+systemctl restart rsyslog
+```
+
+Caso queira colocar a hora em formato 24hrs
+```bash
+localectl set-locale LC_TIME="C.UTF-8"
+```
+
+Atualizar o sistema
 ```bash
 apt-get upgrade
 ```
