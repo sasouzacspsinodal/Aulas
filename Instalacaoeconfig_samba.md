@@ -50,3 +50,10 @@ Reiniciar o serviço do samba
 ```bash
 systemctl restart smbd
 ```
+
+Criar um usuário padrão com acesso ao samba.
+
+```bash
+useradd skysmb -s /bin/false -c "usuario acesso samba" -M && \
+smbpasswd -a skysmb
+```
