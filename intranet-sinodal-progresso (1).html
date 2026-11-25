@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modelo didático de intranet do Colégio Sinodal Progresso.">
+  <title>Intranet | Colégio Sinodal Progresso</title>
+  <style>
+    :root {
+      --navy: #102b4e;
+      --blue: #174a7e;
+      --blue-light: #eaf2f9;
+      --gold: #c9a64b;
+      --ink: #243447;
+      --muted: #64748b;
+      --paper: #f4f7fb;
+      --white: #fff;
+      --line: #dce5ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink); background: var(--paper); line-height: 1.6;
+    }
+    a { color: inherit; }
+    .topbar { background: var(--navy); color: white; padding: 9px 5%; font-size: .86rem; }
+    .topbar-inner, .nav-inner, .container { max-width: 1160px; margin: auto; }
+    .topbar-inner { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    header { background: white; border-bottom: 1px solid var(--line); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; padding:18px 5%; gap:20px; }
+    .brand { display:flex; align-items:center; gap:13px; text-decoration:none; }
+    .brand-mark {
+      width:52px; height:52px; border-radius:12px; display:grid; place-items:center;
+      color:white; background:var(--navy); font-weight:800; font-size:1.05rem;
+      border-bottom:4px solid var(--gold); letter-spacing:1px;
+    }
+    .brand-name strong { display:block; color:var(--navy); font-size:1.05rem; line-height:1.2; }
+    .brand-name span { color:var(--muted); font-size:.78rem; }
+    nav { display:flex; gap:20px; flex-wrap:wrap; }
+    nav a { text-decoration:none; color:var(--navy); font-weight:700; font-size:.92rem; }
+    nav a:hover { color:var(--blue); text-decoration:underline; }
+    .hero {
+      color:white; padding:70px 5%; background:
+      linear-gradient(110deg, rgba(12,37,68,.97), rgba(23,74,126,.88)),
+      radial-gradient(circle at 85% 20%, #547da5, transparent 38%);
+    }
+    .hero-content { max-width:1160px; margin:auto; }
+    .eyebrow { color:#f0d88f; text-transform:uppercase; letter-spacing:2px; font-size:.78rem; font-weight:700; }
+    h1 { font-size:clamp(2rem, 5vw, 3.4rem); line-height:1.12; max-width:760px; margin:12px 0; }
+    .hero p { max-width:680px; color:#e4edf6; font-size:1.08rem; margin:0; }
+    .hero-note { display:inline-block; margin-top:24px; padding:9px 14px; border:1px solid rgba(255,255,255,.35); border-radius:7px; font-size:.86rem; }
+    main { max-width:1160px; margin:38px auto; padding:0 5%; }
+    .section-heading { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:18px; }
+    h2 { color:var(--navy); margin:0; font-size:1.55rem; }
+    .section-heading p { margin:4px 0 0; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+    .card { background:white; border:1px solid var(--line); border-radius:12px; padding:22px; box-shadow:0 5px 18px rgba(16,43,78,.04); }
+    .card-icon { width:42px; height:42px; display:grid; place-items:center; background:var(--blue-light); color:var(--blue); border-radius:10px; font-size:1.25rem; }
+    .card h3 { color:var(--navy); margin:13px 0 5px; font-size:1.08rem; }
+    .card p { color:var(--muted); margin:0; font-size:.93rem; }
+    .content-grid { display:grid; grid-template-columns:1.35fr .85fr; gap:20px; margin-top:34px; }
+    .notice { border-left:4px solid var(--gold); padding:15px 17px; background:#fffaf0; border-radius:0 8px 8px 0; margin-top:14px; }
+    .notice strong { color:var(--navy); display:block; }
+    .notice span { color:var(--muted); font-size:.9rem; }
+    .quick-links { display:grid; gap:10px; margin-top:12px; }
+    .quick-links a { padding:12px 14px; border:1px solid var(--line); border-radius:8px; text-decoration:none; font-weight:700; color:var(--blue); background:#fff; }
+    .quick-links a:hover { background:var(--blue-light); }
+    .about { margin-top:22px; background:var(--navy); color:white; border-radius:14px; padding:26px; }
+    .about h2 { color:white; }
+    .about p { color:#e1eaf3; max-width:850px; margin-bottom:0; }
+    footer { margin-top:45px; background:#0b2039; color:#d5e0eb; padding:28px 5%; }
+    .footer-inner { max-width:1160px; margin:auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:.9rem; }
+    .footer-inner p { margin:3px 0; }
+    .disclaimer { color:#aebed0; font-size:.78rem; max-width:600px; }
+    @media (max-width:800px) {
+      .nav-inner { align-items:flex-start; flex-direction:column; }
+      .grid { grid-template-columns:repeat(2, 1fr); }
+      .content-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:540px) {
+      .grid { grid-template-columns:1fr; }
+      .hero { padding-top:48px; padding-bottom:48px; }
+      .section-heading { display:block; }
+      nav { gap:12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Colégio Sinodal Progresso</span>
+      <span>Intranet institucional · Ambiente demonstrativo</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <a class="brand" href="#" aria-label="Início da intranet">
+        <div class="brand-mark">CSP</div>
+        <div class="brand-name">
+          <strong>Colégio Sinodal Progresso</strong>
+          <span>Intranet e comunicação interna</span>
+        </div>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#comunicados">Comunicados</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="eyebrow">Um lugar onde nascem os sonhos!</div>
+      <h1>Bem-vindo à intranet do Sinodal Progresso</h1>
+      <p>Um espaço de referência para informações, serviços e comunicação da comunidade escolar. Aprender, compartilhar e transformar fazem parte da nossa jornada.</p>
+      <span class="hero-note">Modelo didático para atividade de instalação do Apache</span>
+    </div>
+  </section>
+
+  <main>
+    <section id="servicos">
+      <div class="section-heading">
+        <div>
+          <h2>Serviços e acessos rápidos</h2>
+          <p>Atalhos ilustrativos para o cotidiano escolar.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">💻</div>
+          <h3>Suporte de TI</h3>
+          <p>Orientações para abertura de chamados, equipamentos, sistemas e recursos tecnológicos.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📄</div>
+          <h3>Documentos</h3>
+          <p>Espaço demonstrativo para políticas, procedimentos, formulários e documentos institucionais.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📅</div>
+          <h3>Calendário escolar</h3>
+          <p>Consulte datas importantes, reuniões, eventos, atividades e períodos letivos.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🎓</div>
+          <h3>Área pedagógica</h3>
+          <p>Materiais de apoio, orientações pedagógicas e informações para educadores.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🧰</div>
+          <h3>Cursos técnicos</h3>
+          <p>Informações demonstrativas sobre Administração, Enfermagem, Informática e Mecânica.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Comunidade escolar</h3>
+          <p>Um espaço para fortalecer a colaboração entre estudantes, famílias e equipe escolar.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="content-grid" id="comunicados">
+      <section class="card">
+        <h2>Comunicados</h2>
+        <div class="notice">
+          <strong>Atualização dos recursos de tecnologia</strong>
+          <span>Consulte a equipe responsável antes de instalar programas ou alterar configurações dos equipamentos.</span>
+        </div>
+        <div class="notice">
+          <strong>Organização dos espaços escolares</strong>
+          <span>Ajude a manter os ambientes de aprendizagem organizados e acolhedores.</span>
+        </div>
+        <div class="notice">
+          <strong>Agenda institucional</strong>
+          <span>Acompanhe os canais oficiais da escola para conferir datas e comunicados atualizados.</span>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Links úteis</h2>
+        <div class="quick-links">
+          <a href="https://www.sinodalprogresso.com.br/" target="_blank" rel="noopener">Site oficial do colégio ↗</a>
+          <a href="https://www.sinodalprogresso.com.br/escola" target="_blank" rel="noopener">Conheça a escola ↗</a>
+          <a href="https://www.sinodalprogresso.com.br/contato-localiza-o" target="_blank" rel="noopener">Contato e localização ↗</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="about" id="sobre">
+      <h2>Educação para transformar</h2>
+      <p>O Colégio Sinodal Progresso valoriza a formação integral, o conhecimento, a reflexão, a autonomia, a ética e a responsabilidade social e ambiental. Esta página é uma simulação educacional de intranet, criada para praticar a publicação de conteúdo em um servidor web Apache.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>Colégio Sinodal Progresso</strong>
+        <p>Rua Fernando Ferrari, 1450 · Montenegro/RS</p>
+        <p>(51) 3632-2318 · contato@sinodalprogresso.com.br</p>
+      </div>
+      <p class="disclaimer">Página demonstrativa, não oficial. Conteúdo, comunicados e atalhos internos são exemplos para fins didáticos. Consulte o site oficial para informações atualizadas.</p>
+    </div>
+  </footer>
+</body>
+</html>
